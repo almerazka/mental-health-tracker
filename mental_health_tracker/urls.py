@@ -14,9 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
 
+from django.contrib import admin
+from django.urls import path, include # digunakan untuk mengimpor rute URL dari aplikasi lain
+# urls.py pada proyek mengarahkan rute URL tingkat proyek dan dapat mengimpor rute URL dari berkas urls.py aplikasi-aplikasi, memungkinkan aplikasi dalam proyek Django untuk bersifat modular dan terpisah.
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('main.urls')), # Path URL dibiarkan berupa string kosong agar halaman aplikasi main dapat diakses secara langsung.
 ]
