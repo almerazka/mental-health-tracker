@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block content %}
+<h1>Add New Mood Entry</h1>
+
+<form method="POST">
+  {% csrf_token %} <!-- Token yang berfungsi sebagai security. Token ini di-generate secara otomatis -->
+  <table> 
+    {{ form.as_table }} <!-- Template tag yang digunakan untuk menampilkan fields form  yang sudah dibuat pada forms.py  -->
+    <tr>
+      <td></td>
+      <td>
+        <input type="submit" value="Add Mood Entry" /> <!-- Digunakan sebagai tombol submit untuk mengirimkan request ke view  -->
+      </td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}
