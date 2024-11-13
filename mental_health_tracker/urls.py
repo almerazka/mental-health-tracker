@@ -21,4 +21,5 @@ from django.urls import path, include # digunakan untuk mengimpor rute URL dari 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')), # Path URL dibiarkan berupa string kosong agar halaman aplikasi main dapat diakses secara langsung.
+    path('auth/', include('authentication.urls')),
 ]
